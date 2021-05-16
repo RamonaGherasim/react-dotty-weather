@@ -1,0 +1,19 @@
+.celsius-link,
+.fahrenheit-link {
+  color: whitesmoke;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+#CFline {
+  color: whitesmoke;
+}
+
+.active {
+  cursor: default;
+  text-decoration: none;
+}
+
+.active:hover {
+  text-decoration: none;
+}

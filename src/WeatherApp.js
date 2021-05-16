@@ -21,7 +21,7 @@ import Forecast from "./Forecast";
 export default function WeatherApp ( ) {
     return (
   <div className="WeatherApp">
-     <Container>
+     <Container fluid="md">
          <Row>
          
          <Col>
