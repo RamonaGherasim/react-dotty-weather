@@ -9,6 +9,11 @@ import Icon from "./Icon";
 import CityDisplay from "./CityDisplay";
 import Description from "./Description";
 import DateTime from "./DateTime";
+import SearchForm from "./SearchForm";
+import RealFeel from "./RealFeel";
+import Humidity from "./Humidity";
+import Wind from "./Wind";
+import Forecast from "./Forecast";
 
 
 
@@ -16,6 +21,9 @@ export default function WeatherApp ( ) {
     return (
   <div className="WeatherApp">
      <Container>
+         <Row>
+         
+         <Col>
          <Row>
              <Col>
              <Conversion />
@@ -43,7 +51,35 @@ export default function WeatherApp ( ) {
          <Row>
              <DateTime />
          </Row>
+         </Col>
 
+        <Col>
+         <Col>
+         <SearchForm />
+         <hr />
+         </Col>
+
+         <Row>
+             <RealFeel />
+         </Row>
+         <Row>
+             <Humidity />
+         </Row>
+         <Row>
+             <Wind />
+         </Row>
+       
+       <hr /> 
+
+       <Forecast />
+       <Forecast />
+      <Forecast />
+      <Forecast />
+               <Forecast />
+    
+    </Col>
+    </Row>
+    
      </Container>
     </div>
         
