@@ -3,15 +3,15 @@ import React from "react";
 export default function Conversion ( ) {
     return (
         <div className="Conversion">
-                  <a href="#" className="celsius-link active">
+                  <span href="#" className="celsius-link active">
                     {" "}
                     °C
-                  </a>
+                  </span>
                   <span id="CFline"> | </span>
-                  <a href="#" className="fahrenheit-link">
+                  <span href="#" className="fahrenheit-link">
                     {" "}
                     °F{" "}
-                  </a>
+                  </span>
         </div>
 
     )
