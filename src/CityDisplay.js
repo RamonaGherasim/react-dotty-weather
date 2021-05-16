@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function CityDisplay () {
-    return
+    return (
     <h2>London</h2>
+    );
 }
