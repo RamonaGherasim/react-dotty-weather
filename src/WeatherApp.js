@@ -8,6 +8,7 @@ import CurrentTempDisplay from "./CurrentTempDisplay";
 import Icon from "./Icon";
 import CityDisplay from "./CityDisplay";
 import Description from "./Description";
+import DateTime from "./DateTime";
 
 
 
@@ -38,6 +39,9 @@ export default function WeatherApp ( ) {
              <Col>
              <Description />
              </Col>
+         </Row>
+         <Row>
+             <DateTime />
          </Row>
 
      </Container>
