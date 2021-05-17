@@ -1,0 +1,7 @@
+.Forecast {
+  color: whitesmoke;
+}
+
+.Forecast .min {
+  opacity: 0.5;
+}

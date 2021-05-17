@@ -6,7 +6,7 @@ export default function Wind () {
     return (
         <Row>
         <Col>
-        <p> Wind: </p>
+        <p> Wind </p>
         </Col>
         <Col>
         <p> 7km/h </p>
