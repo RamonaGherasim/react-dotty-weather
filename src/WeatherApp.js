@@ -15,11 +15,13 @@ import RealFeel from "./RealFeel";
 import Humidity from "./Humidity";
 import Wind from "./Wind";
 import Forecast from "./Forecast";
+import Footer from "./Footer";
 
 
 
 export default function WeatherApp ( ) {
     return (
+        <div>
   <div className="WeatherApp">
      <Container fluid="md">
          <Row>
@@ -82,6 +84,9 @@ export default function WeatherApp ( ) {
     </Row>
     
      </Container>
+    </div>
+
+    <Footer />
     </div>
         
             
