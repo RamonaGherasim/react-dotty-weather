@@ -9,3 +9,7 @@
   text-decoration: none;
   font-weight: bolder;
 }
+
+.Footer a:hover {
+  text-decoration: underline;
+}
