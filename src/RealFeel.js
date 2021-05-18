@@ -4,13 +4,15 @@ import Row from "react-bootstrap/Row";
 
 export default function RealFeel () {
     return (
+        <div className="RealFeel">
      <Row>
-        <Col>
+        <Col xs={8}>
         <p> Real feel </p>
         </Col>
         <Col>
-        <p> 11° </p>
+        <p className="degrees"> 11° </p>
         </Col>
         </Row>
+        </div>
     );
 }

@@ -4,13 +4,15 @@ import Row from "react-bootstrap/Row";
 
 export default function Wind () {
     return (
+        <div className="Wind">
         <Row>
-        <Col>
+        <Col xs={8}>
         <p> Wind </p>
         </Col>
         <Col>
-        <p> 7km/h </p>
+        <p className="speed"> 7km/h </p>
         </Col>
         </Row>
+        </div>
     )
 }

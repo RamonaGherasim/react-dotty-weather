@@ -5,8 +5,8 @@ export default function Icon () {
     return (
       <div className="Icon">
      <img
-                    src="https://openweathermap.org/img/wn/01n@2x.png"
-                    alt="night clear sky"
+                    src="http://openweathermap.org/img/wn/01d@2x.png"
+                    alt="sunny"
                     className="icon"
                   />
                   </div>

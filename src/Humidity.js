@@ -4,13 +4,15 @@ import Row from "react-bootstrap/Row";
 
 export default function Humidity () {
     return (
+        <div className="Humidity">
         <Row>
-        <Col>
+        <Col xs={8}>
         <p> Humidity </p>
         </Col>
         <Col>
-        <p> 43% </p>
+        <p className="percentage"> 43% </p>
         </Col>
         </Row>
+        </div>
     );
 }

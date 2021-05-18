@@ -17,8 +17,8 @@ export default function Forecast () {
                           width="40"
                         />
             </Col>
-            <Col>           
-                          <span>14° </span>
+            <Col align-self-end>           
+                          <span className="max">14° </span>
                           <span className="min"> | 5° </span>
             </Col>
             </Row>

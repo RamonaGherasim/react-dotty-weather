@@ -1,5 +1,4 @@
-.DayTime p {
+.DateTime p {
   color: whitesmoke;
-  position: relative;
-  top: 90px;
+  padding-top: 150px;
 }

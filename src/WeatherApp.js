@@ -23,7 +23,7 @@ export default function WeatherApp ( ) {
     return (
         <div>
   <div className="WeatherApp">
-     <Container fluid="md">
+     <Container>
          <Row>
          
          <Col>
@@ -51,9 +51,9 @@ export default function WeatherApp ( ) {
              <Description />
              </Col>
          </Row>
-         <Row>
+         <Col>
              <DateTime />
-         </Row>
+             </Col>
          </Col>
 
         <Col>
