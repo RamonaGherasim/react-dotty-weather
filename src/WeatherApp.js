@@ -3,7 +3,6 @@ import "./WeatherApp.css"
 import Conversion from "./Conversion";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import Icon from "./Icon";
 import DateTime from "./DateTime";
 import SearchForm from "./SearchForm";
 import Forecast from "./Forecast";
@@ -55,12 +54,22 @@ if (ready) {
              <h1 className="temperature">{Math.round(weatherData.temperature)}°</h1>
              </Col>
              <Col>
-             <Icon />
+                 <div className="Icon">
+        <div className="clearfix">
+     <img
+                    src="http://openweathermap.org/img/wn/01d@2x.png"
+                    alt="sunny"
+                    className="icon"
+                  />
+                  </div>
+                  </div>
              </Col>
          </Row>
          <Row>
              <Col>
+             <div className="clearfix">
                 <h2 className="cityDisplay">{weatherData.city}</h2>
+                </div>
              </Col>
              <Col>
                 <h2>Clear sky</h2>
@@ -84,7 +93,7 @@ if (ready) {
         <p> Real feel </p>
         </Col>
         <Col>
-        <p className="degrees"> {weatherData.realFeel}° </p>
+        <p className="degrees"> {Math.round(weatherData.realFeel)}° </p>
         </Col>
         </Row>
         </div>
@@ -108,7 +117,7 @@ if (ready) {
         <p> Wind </p>
         </Col>
         <Col>
-        <p className="speed"> {weatherData.wind} km/h </p>
+        <p className="speed"> {Math.round(weatherData.wind)} km/h </p>
         </Col>
         </Row>
         </div>

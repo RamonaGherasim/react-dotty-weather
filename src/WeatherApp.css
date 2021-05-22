@@ -29,3 +29,7 @@ h2:first-letter {
   color: whitesmoke;
   font-size: 18px;
 }
+
+.icon {
+  width: 100%;
+}
