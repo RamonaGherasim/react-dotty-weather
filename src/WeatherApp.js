@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./WeatherApp.css"
 import Conversion from "./Conversion";
-import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Icon from "./Icon";
 import DateTime from "./DateTime";
 import SearchForm from "./SearchForm";
-import RealFeel from "./RealFeel";
-import Humidity from "./Humidity";
-import Wind from "./Wind";
 import Forecast from "./Forecast";
-import Footer from "./Footer";
+import axios from "axios";
+import { Container } from "react-bootstrap";
 
 
 
 export default function WeatherApp ( ) {
+    const[ready, setReady] = useState(false);
+    const [weatherData, setWeatherData] = useState({});
+    
+    function handleResponse (response) {
+        console.log(response.data.main.feels_like)
+        setReady(true);
+         setWeatherData ({
+           city: response.data.name,     
+            temperature: response.data.main.temp,
+            realFeel: response.data.main.feels_like,
+            humidity: response.data.main.humidity,
+            wind: response.data.wind.speed,
+            
+     
+    })
+    }
+    
+if (ready) {
     return (
-        <div>
+       
   <div className="WeatherApp">
-     <Container>
+         <Container>
          <Row>
          
          <Col>
@@ -37,7 +52,7 @@ export default function WeatherApp ( ) {
          </Row>
          <Row>
              <Col>
-             <h1>13°</h1>
+             <h1 className="temperature">{Math.round(weatherData.temperature)}°</h1>
              </Col>
              <Col>
              <Icon />
@@ -45,9 +60,7 @@ export default function WeatherApp ( ) {
          </Row>
          <Row>
              <Col>
-           <div className="CityDisplay">
-                <h2>London</h2>
-          </div>
+                <h2 className="cityDisplay">{weatherData.city}</h2>
              </Col>
              <Col>
                 <h2>Clear sky</h2>
@@ -65,13 +78,40 @@ export default function WeatherApp ( ) {
          </Col>
 
          <Row>
-             <RealFeel />
+               <div className="RealFeel">
+     <Row>
+        <Col xs={8}>
+        <p> Real feel </p>
+        </Col>
+        <Col>
+        <p className="degrees"> {weatherData.realFeel}° </p>
+        </Col>
+        </Row>
+        </div>
          </Row>
          <Row>
-             <Humidity />
+             <div className="Humidity">
+        <Row>
+        <Col xs={8}>
+        <p> Humidity </p>
+        </Col>
+        <Col>
+        <p className="percentage"> {weatherData.humidity}% </p>
+        </Col>
+        </Row>
+        </div>
          </Row>
          <Row>
-             <Wind />
+             <div className="Wind">
+        <Row>
+        <Col xs={8}>
+        <p> Wind </p>
+        </Col>
+        <Col>
+        <p className="speed"> {weatherData.wind} km/h </p>
+        </Col>
+        </Row>
+        </div>
          </Row>
        
        <hr /> 
@@ -84,14 +124,14 @@ export default function WeatherApp ( ) {
     
     </Col>
     </Row>
-    
-     </Container>
+    </Container>
     </div>
-
-    <Footer />
-    </div>
-        
-            
-
-    )
+);
+} else {
+  const apiKey = "5eabfe88b69ebff8b2d2c1968bc189ae";
+    let city = "London";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(handleResponse)
+    return "Loading..."
+}   
 }
