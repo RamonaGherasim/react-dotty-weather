@@ -2,7 +2,30 @@
   background: rgba(0, 2, 1, 0.9);
   padding: 20px 0px 0px;
   border-radius: 30px;
-  margin: 60px auto;
+  margin: 0 auto;
+  margin-top: 70px;
   max-width: 55%;
   color: whitesmoke;
+}
+
+h1 {
+  text-align: center;
+  font-size: 120px;
+  color: whitesmoke;
+  padding-top: 50px;
+}
+
+h2 {
+  text-align: center;
+  color: whitesmoke;
+}
+
+h2:first-letter {
+  text-transform: capitalize;
+}
+
+.HighLowLine {
+  text-align: right;
+  color: whitesmoke;
+  font-size: 18px;
 }

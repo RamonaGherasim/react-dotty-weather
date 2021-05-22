@@ -1,14 +1,10 @@
 import React from "react";
 import "./WeatherApp.css"
 import Conversion from "./Conversion";
-import HighLowLine from "./HighLowLine";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import CurrentTempDisplay from "./CurrentTempDisplay";
 import Icon from "./Icon";
-import CityDisplay from "./CityDisplay";
-import Description from "./Description";
 import DateTime from "./DateTime";
 import SearchForm from "./SearchForm";
 import RealFeel from "./RealFeel";
@@ -31,13 +27,17 @@ export default function WeatherApp ( ) {
              <Col>
              <Conversion />
              </Col>
-             <Col>
-             <HighLowLine />
+             <Col>         
+       <div className="HighLowLine">
+                  <span className="today-high">H: 14°</span>
+                  <span> | </span>
+                  <span className="today-low">L: 12°</span>  
+        </div>
              </Col>
          </Row>
          <Row>
              <Col>
-             <CurrentTempDisplay />
+             <h1>13°</h1>
              </Col>
              <Col>
              <Icon />
@@ -45,10 +45,12 @@ export default function WeatherApp ( ) {
          </Row>
          <Row>
              <Col>
-             <CityDisplay />
+           <div className="CityDisplay">
+                <h2>London</h2>
+          </div>
              </Col>
              <Col>
-             <Description />
+                <h2>Clear sky</h2>
              </Col>
          </Row>
          <Col>
