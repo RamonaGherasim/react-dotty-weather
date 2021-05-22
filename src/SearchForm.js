@@ -8,8 +8,8 @@ export default function SearchForm () {
                   type="text"
                   placeholder="Enter a location here"
                   id="search-box"
-                  autocomplete="off"
-                  autofocus="on"
+                  autoComplete="off"
+                  autoFocus="on"
                 />
                 <button
                   type="sumbit-button"
