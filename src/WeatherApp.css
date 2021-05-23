@@ -30,10 +30,6 @@ h2:first-letter {
   font-size: 18px;
 }
 
-.icon {
-  width: 100%;
-}
-
 form {
   padding: 0px;
 }
@@ -54,4 +50,10 @@ input:hover {
 .btn-outline-secondary {
   color: whitesmoke;
   border: 2px solid #a3a3a3;
+}
+
+canvas {
+  position: relative;
+  top: 70px;
+  left: 45px;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./WeatherApp.css"
+import WeatherIcon from "./WeatherIcon";
 import Conversion from "./Conversion";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -20,7 +21,7 @@ export default function WeatherApp (props ) {
             city: response.data.name,     
             temperature: response.data.main.temp,
             description: response.data.weather[0].description,
-            iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+            icon: response.data.weather[0].icon,
             date: new Date(response.data.dt * 1000),
             realFeel: response.data.main.feels_like,
             humidity: response.data.main.humidity,
@@ -35,12 +36,13 @@ export default function WeatherApp (props ) {
   }
    
   function handleSubmit(event){
-    event.prevenDefault();
+    event.preventDefault();
+    search ();
   }
 
   function handleCityChange (event){
   setCity(event.target.value);
-  search ();
+
 }
     
 if (weatherData.ready) {
@@ -67,16 +69,13 @@ if (weatherData.ready) {
              <h1 className="temperature">{Math.round(weatherData.temperature)}°</h1>
              </Col>
              <Col>
+           
                  <div className="Icon">
-        <div className="clearfix">
-     <img
-                    src={weatherData.iconUrl}
-                    alt={weatherData.description}
-                    className="icon"
-                  />
-                  </div>
-                  </div>
-             </Col>
+                      <WeatherIcon data={weatherData.icon} />
+                </div>
+              
+            
+        </Col>
          </Row>
          <Row>
              <Col>
@@ -160,11 +159,11 @@ if (weatherData.ready) {
        
        <hr /> 
 
-       <Forecast />
-       <Forecast />
       <Forecast />
       <Forecast />
-               <Forecast />
+      <Forecast />
+      <Forecast />
+      <Forecast />
     
     </Col>
     </Row>
