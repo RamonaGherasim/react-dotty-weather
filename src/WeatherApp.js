@@ -21,7 +21,7 @@ export default function WeatherApp (props ) {
             temperature: response.data.main.temp,
             description: response.data.weather[0].description,
             iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-            date: "Last updated on Friday, 23 April at 18:38",
+            date: new Date(response.data.dt * 1000),
             realFeel: response.data.main.feels_like,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
@@ -75,7 +75,7 @@ if (weatherData.ready) {
              </Col>
          </Row>
          <Col>
-             <DateTime />
+             <DateTime date={weatherData.date}/>
              </Col>
          </Col>
 
