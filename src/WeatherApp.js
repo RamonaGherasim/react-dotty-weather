@@ -11,25 +11,24 @@ import { Container } from "react-bootstrap";
 
 
 
-export default function WeatherApp ( ) {
-    const[ready, setReady] = useState(false);
-    const [weatherData, setWeatherData] = useState({});
+export default function WeatherApp (props ) {
+    const [weatherData, setWeatherData] = useState({ ready : false});
     
     function handleResponse (response) {
-        console.log(response.data.main.feels_like)
-        setReady(true);
          setWeatherData ({
-           city: response.data.name,     
+            ready: true,
+            city: response.data.name,     
             temperature: response.data.main.temp,
+            description: response.data.weather[0].description,
+            iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+            date: "Last updated on Friday, 23 April at 18:38",
             realFeel: response.data.main.feels_like,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
-            
-     
     })
     }
     
-if (ready) {
+if (weatherData.ready) {
     return (
        
   <div className="WeatherApp">
@@ -57,8 +56,8 @@ if (ready) {
                  <div className="Icon">
         <div className="clearfix">
      <img
-                    src="http://openweathermap.org/img/wn/01d@2x.png"
-                    alt="sunny"
+                    src={weatherData.iconUrl}
+                    alt={weatherData.description}
                     className="icon"
                   />
                   </div>
@@ -72,7 +71,7 @@ if (ready) {
                 </div>
              </Col>
              <Col>
-                <h2>Clear sky</h2>
+                <h2>{weatherData.description}</h2>
              </Col>
          </Row>
          <Col>
@@ -138,8 +137,7 @@ if (ready) {
 );
 } else {
   const apiKey = "5eabfe88b69ebff8b2d2c1968bc189ae";
-    let city = "London";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(handleResponse)
     return "Loading..."
 }   
