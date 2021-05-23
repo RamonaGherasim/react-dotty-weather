@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./WeatherApp.css"
+import WeatherTemp from "./WeatherTemp";
 import WeatherIcon from "./WeatherIcon";
-import Conversion from "./Conversion";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import DateTime from "./DateTime";
@@ -53,9 +53,6 @@ if (weatherData.ready) {
          
          <Col>
          <Row>
-             <Col>
-             <Conversion />
-             </Col>
              <Col>         
        <div className="HighLowLine">
                   <span className="today-high">H: 14°</span>
@@ -66,7 +63,7 @@ if (weatherData.ready) {
          </Row>
          <Row>
              <Col>
-             <h1 className="temperature">{Math.round(weatherData.temperature)}°</h1>
+             <WeatherTemp temp={weatherData.temperature} />
              </Col>
              <Col>
            
