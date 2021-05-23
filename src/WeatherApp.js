@@ -4,7 +4,6 @@ import Conversion from "./Conversion";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import DateTime from "./DateTime";
-import SearchForm from "./SearchForm";
 import Forecast from "./Forecast";
 import axios from "axios";
 import { Container } from "react-bootstrap";
@@ -13,6 +12,7 @@ import { Container } from "react-bootstrap";
 
 export default function WeatherApp (props ) {
     const [weatherData, setWeatherData] = useState({ ready : false});
+    const [city, setCity] = useState (props.defaultCity);
     
     function handleResponse (response) {
          setWeatherData ({
@@ -27,11 +27,25 @@ export default function WeatherApp (props ) {
             wind: response.data.wind.speed,
     })
     }
+
+  function search (){
+    const apiKey = "5eabfe88b69ebff8b2d2c1968bc189ae";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    axios.get(apiUrl).then(handleResponse)
+  }
+   
+  function handleSubmit(event){
+    event.prevenDefault();
+  }
+
+  function handleCityChange (event){
+  setCity(event.target.value);
+  search ();
+}
     
 if (weatherData.ready) {
-    return (
-       
-  <div className="WeatherApp">
+    return (     
+    <div className="WeatherApp">
          <Container>
          <Row>
          
@@ -81,13 +95,35 @@ if (weatherData.ready) {
 
         <Col>
          <Col>
-         <SearchForm />
+         <form onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="Enter a location here"
+                  id="search-box"
+                  autoComplete="off"
+                  autoFocus="on"
+                  onChange={handleCityChange}
+                />
+                <button
+                  type="sumbit-button"
+                  className="btn btn-outline-secondary"
+                >
+                  <i className="fas fa-search-location"></i>
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-secondary"
+                  id="my-location-button"
+                >
+                  <i className="fas fa-map-marker-alt"></i>
+                </button>
+              </form>
          <hr />
          </Col>
 
          <Row>
                <div className="RealFeel">
-     <Row>
+        <Row>
         <Col xs={8}>
         <p> Real feel </p>
         </Col>
@@ -136,9 +172,7 @@ if (weatherData.ready) {
     </div>
 );
 } else {
-  const apiKey = "5eabfe88b69ebff8b2d2c1968bc189ae";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`
-    axios.get(apiUrl).then(handleResponse)
+    search ();
     return "Loading..."
 }   
 }
