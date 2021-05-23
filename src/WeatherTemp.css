@@ -1,21 +1,22 @@
-.celsius-link,
-.fahrenheit-link {
-  color: whitesmoke;
-  font-size: 18px;
-  font-weight: 300;
+.WeatherTemp {
+  margin-left: 40px;
+  margin-top: 70px;
 }
 
-#CFline {
-  color: whitesmoke;
+.temperature {
+  font-size: 90px;
 }
 
-.active {
-  cursor: default;
+.unit {
+  position: relative;
+  top: -50px;
+}
+
+a {
+  color: #c8a5a3;
   text-decoration: none;
 }
 
-.active:hover {
-  text-decoration: none;
+a:hover {
+  color: palevioletred;
 }
-
-
