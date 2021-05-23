@@ -16,8 +16,11 @@ export default function WeatherApp (props ) {
     const [city, setCity] = useState (props.defaultCity);
     
     function handleResponse (response) {
+        console.log (response.data);
          setWeatherData ({
             ready: true,
+            tempMin: response.data.main.temp_min,
+             tempMax: response.data.main.temp_max,
             city: response.data.name,     
             temperature: response.data.main.temp,
             description: response.data.weather[0].description,
@@ -55,9 +58,9 @@ if (weatherData.ready) {
          <Row>
              <Col>         
        <div className="HighLowLine">
-                  <span className="today-high">H: 14°</span>
+                  <span className="today-high"><strong>H: </strong>{Math.round(weatherData.tempMax)}°C</span>
                   <span> | </span>
-                  <span className="today-low">L: 12°</span>  
+                  <span className="today-low"><strong>L: </strong>{Math.round(weatherData.tempMin)}°C</span>  
         </div>
              </Col>
          </Row>
@@ -69,9 +72,7 @@ if (weatherData.ready) {
            
                  <div className="Icon">
                       <WeatherIcon data={weatherData.icon} />
-                </div>
-              
-            
+                </div> 
         </Col>
          </Row>
          <Row>

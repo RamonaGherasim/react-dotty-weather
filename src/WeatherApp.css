@@ -30,6 +30,10 @@ h2:first-letter {
   font-size: 18px;
 }
 
+.HighLowLine strong {
+  color: #c8a5a3;
+}
+
 form {
   padding: 0px;
 }
@@ -44,16 +48,16 @@ input {
 }
 
 input:hover {
-  box-shadow: inset 0 0 20px grey;
+  box-shadow: inset 0 0 40px #c8a5a3;
 }
 
 .btn-outline-secondary {
-  color: whitesmoke;
-  border: 2px solid #a3a3a3;
+  color: #c8a5a3;
+  border: 2px solid #c8a5a3;
 }
 
 canvas {
   position: relative;
-  top: 70px;
+  top: 85px;
   left: 45px;
 }
