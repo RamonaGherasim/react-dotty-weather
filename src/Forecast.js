@@ -5,6 +5,10 @@ import "./Forecast.css";
 import WeatherIcon from "./WeatherIcon";
 
 export default function Forecast () {
+  let apiKey="5eabfe88b69ebff8b2d2c1968bc189ae";
+  let latitude = 51.5;
+  let longitude = 0.12;
+  let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
     return (
       <div className="Forecast">
         <Row>
