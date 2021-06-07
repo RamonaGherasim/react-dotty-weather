@@ -71,7 +71,7 @@ if (weatherData.ready) {
              <Col>
            
                  <div className="Icon">
-                      <WeatherIcon data={weatherData.icon} />
+                      <WeatherIcon data={weatherData.icon} size={110} />
                 </div> 
         </Col>
          </Row>
@@ -158,11 +158,7 @@ if (weatherData.ready) {
        <hr /> 
 
       <Forecast />
-      <Forecast />
-      <Forecast />
-      <Forecast />
-      <Forecast />
-    
+
     </Col>
     </Row>
     </Container>

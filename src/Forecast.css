@@ -5,3 +5,9 @@
 .Forecast .min {
   opacity: 0.5;
 }
+
+.Forecast canvas {
+  color: whitesmoke;
+  position: relative;
+  top: 2px;
+}

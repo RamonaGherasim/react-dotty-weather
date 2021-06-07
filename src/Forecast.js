@@ -2,6 +2,7 @@ import React from "react";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import "./Forecast.css";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Forecast () {
     return (
@@ -11,11 +12,7 @@ export default function Forecast () {
                         <p>Saturday</p>
             </Col>
             <Col>
-                        <img
-                          src="http://openweathermap.org/img/wn/01d@2x.png"
-                          alt="Sunny"
-                          width="40"
-                        />
+           <WeatherIcon data="01d" size={27} /> 
             </Col>
             <Col align-self-end>           
                           <span className="max">14° </span>
