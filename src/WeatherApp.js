@@ -19,6 +19,7 @@ export default function WeatherApp (props ) {
         console.log (response.data);
          setWeatherData ({
             ready: true,
+            coordinates: response.data.coord,
             tempMin: response.data.main.temp_min,
              tempMax: response.data.main.temp_max,
             city: response.data.name,     
@@ -157,7 +158,7 @@ if (weatherData.ready) {
        
        <hr /> 
 
-      <Forecast />
+      <Forecast coordinates={weatherData.coordinates}/>
 
     </Col>
     </Row>
