@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import WeatherIcon from "./WeatherIcon";
 
 export default function ForecastDay (props) {
-    function maxTemp () {
+    function maxTemp ( ) {
        let temperature = Math.round(props.data.temp.max);
        return `${temperature}°`   
      }
