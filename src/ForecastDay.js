@@ -30,7 +30,7 @@ export default function ForecastDay (props) {
             <Col>
                         <WeatherIcon data={props.data.weather[0].icon} size={27} /> 
             </Col>
-            <Col align-self-end>           
+            <Col>           
                           <span className="max"> {maxTemp ()} </span>
                           <span className="min"> | {minTemp ()} </span>
             </Col>
