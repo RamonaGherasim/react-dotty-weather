@@ -107,13 +107,6 @@ if (weatherData.ready) {
                 >
                   <i className="fas fa-search-location"></i>
                 </button>
-                <button
-                  type="button"
-                  className="btn btn-outline-secondary"
-                  id="my-location-button"
-                >
-                  <i className="fas fa-map-marker-alt"></i>
-                </button>
               </form>
          <hr />
          </Col>
